@@ -1,0 +1,27 @@
+<div class="mb-md-5 mt-md-4 pb-5">
+
+  <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+  <p class="text-white-50 mb-5">Ingrese su email y su contraseña!</p>
+
+  <form [formGroup]="formLogin" (ngSubmit)="login(email.value, password.value)">
+  <div class="form-outline form-white mb-4">
+    <input type="email" id="typeEmailX" class="form-control form-control-lg" formControlName="email" #email/>
+    <span class="form-text text-danger fs-6" *ngIf="fieldValidator('email')">El correo es invalido!</span >
+
+    <label class="form-label" for="typeEmailX">Email</label>
+  </div>
+
+  <div class="form-outline form-white mb-4">
+    <input type="password" id="typePasswordX" class="form-control form-control-lg" formControlName="password" #password/>
+    <span class="form-text text-danger fs-6" *ngIf="fieldValidator('password')">Contraseña inválida!</span > <!-- *ngIf: permite evaluar condiciones-->
+    <label class="form-label" for="typePasswordX">Contraseña</label>
+  </div>
+
+  <p class="small mb-5 pb-lg-2"><a class="text-white-50" routerLink="/register">Registrarse</a></p>
+
+  <button class="btn btn-outline-light btn-lg px-5" type="submit" [disabled]="formLogin.invalid">Ingresar</button>
+
+  <button class="btn btn-outline-light btn-lg px-5" type="button"(click)="registerGoogle()">Registrarse Con Google</button>
+</form>
+</div>
+
