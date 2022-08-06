@@ -1,4 +1,7 @@
-Par aejecutar la app: npm start
+# Para ejecutar la app: 1) npm install     2) npm start
+
+
+
 
 # FrontendTodoListo
 
